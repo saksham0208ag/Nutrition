@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LivWell Vanilla Protein</title>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #111;
+      color: #f3e3c3;
+      scroll-behavior: smooth;
+    }
+    section {
+      padding: 4rem 2rem;
+    }
+    .hero-section {
+      background: #a8392b;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .hero-content {
+      max-width: 600px;
+    }
+    .hero-content h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+    .hero-content p {
+      margin-bottom: 2rem;
+    }
+    .hero-content button {
+      padding: 1rem 2rem;
+      background: #c94e3f;
+      border: none;
+      color: #fff;
+      font-size: 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+       transition: background 0.3s, transform 0.2s;
+      box-shadow: 0 6px 12px ;
+    }
+  #button:hover{
+color: white;
+transform: scale(1.05);
+    }
+    .hero-image img {
+      max-width: 300px;
+    }
+    .benefits-section {
+      background: #111;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      color: #f5d77a;
+      text-align: center;
+    }
+    .ingredients-section {
+      background: #f3e3c3;
+      color: #2a1a14;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+    .ingredients-section h2 {
+      width: 100%;
+      margin-bottom: 1rem;
+    }
+    .ingredients-text, .ingredients-image {
+      flex: 1 1 100px;
+    }
+    .why-vanilla-section {
+      background: #1a1a1a;
+      text-align: center;
+    }
+    .testimonials-section {
+      background: #000;
+    }
+    .testimonial {
+      background: #1a1a1a;
+      margin: 1rem 0;
+      padding: 1rem;
+      border-radius: 8px;
+    }
+    .cta-section {
+      background: #c94e3f;
+      text-align: center;
+    }
+    .cta-section button {
+      margin-top: 1rem;
+      padding: 1rem 2rem;
+      background: #a8392b;
+      border: none;
+      color: #fff;
+      font-size: 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+       box-shadow: 0 6px 12px;
+    }
+      .hover-animate {
+  display: inline-block;
+  transition: transform 0.3s ease, color 0.3s ease;
+ 
+}
+#subscribe:hover{
+  transform: scale(1.05);
+  color: white;
+}
+  </style>
+</head>
+<body>
+  <section class="hero-section" data-aos="fade-down">
+    <div class="hero-content" data-aos="fade-down">
+      <h1>Vanilla Plant-Based Protein</h1>
+      <p>Deliciously clean. Naturally powerful.</p>
+      <button id="button"">🛒 Shop Now</button>
+    </div>
+    <div class="hero-image" data-aos="fade-down">
+      <img src="images/vanilla1.png" alt="Vanilla Protein Jar">
+    </div>
+  </section>
+
+  <section class="benefits-section" data-aos="fade-down">
+    <div data-aos="fade-down">✅ 21g Clean Protein</div>
+    <div data-aos="fade-down">🌿 USDA Organic</div>
+    <div data-aos="fade-down">🧬 Digestive Enzymes</div>
+    <div data-aos="fade-down">♻️ Plastic Neutral</div>
+    <div data-aos="fade-down">🚫 No Sugar</div>
+    <div data-aos="fade-down">💪 Muscle Support</div>
+  </section>
+
+  <section class="ingredients-section" >
+    <h2>Only 3 Clean Ingredients</h2>
+    <div class="ingredients-text">
+      <ul>
+        <li>Organic Pea Protein</li>
+        <li>Organic Brown Rice Protein</li>
+        <li>Natural Vanilla Flavor</li>
+      </ul>
+    </div>
+   
+  </section>
+
+  <section class="why-vanilla-section" data-aos="fade-down">
+    <h2 class="hover-animate">Why Vanilla?</h2>
+    <p>Our Vanilla is not only delicious — it's smooth, real, and energizing. Sourced ethically and blended gently to preserve its aroma.</p>
+  </section>
+
+  <section class="testimonials-section" data-aos="fade-down">
+    <h2>What Customers Say</h2>
+    <div class="testimonial">⭐⭐⭐⭐⭐ “Best vanilla protein I’ve ever had!” – Priya M.</div>
+    <div class="testimonial">⭐⭐⭐⭐⭐ “No bloat, great mixability.” – Aakash R.</div>
+    <div class="testimonial">⭐⭐⭐⭐ “Finally, a clean and tasty option!” – Sneha G.</div>
+  </section>
+
+  <section class="cta-section" data-aos="fade-down">
+    <h2>Fuel Your Day. The Natural Way.</h2>
+    <button id="subscribe" >🔴 Subscribe & Save 30%</button>
+  </section>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 1000,
+    once: true
+  });
+</script>
+
+</body>
+</html>
