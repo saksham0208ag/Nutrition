@@ -13,6 +13,15 @@
       background: #121212;
       color: #ffffff;
     }
+    * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  overflow-x: hidden;
+}
     header {
       background: linear-gradient(135deg, #ef2d56, #8b0000);
       padding: 2rem;
@@ -82,6 +91,7 @@
 }
 .Contact{
     text-align: center;
+    background-color: #2a2a2a;
 }
 .header {
   position: relative;
@@ -96,7 +106,7 @@
   position: absolute;
   top: 1rem;
   left: 1rem;
-  line-height: 0.2;
+  line-height: 1.0;
   background-color: #ef2d56;
   padding: 0.5rem 1rem;
   border-radius: 8px;
@@ -108,7 +118,7 @@
     footer {
       text-align: center;
       padding: 1rem;
-      background: #1a1a1a;
+      background:black;
       font-size: 0.9rem;
       color: #ccc;
     }
@@ -126,6 +136,131 @@
       from { transform: scale(0.95); opacity: 0; }
       to { transform: scale(1); opacity: 1; }
     }
+
+    .menu-icon {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      width: 30px;
+      height: 25px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      cursor: pointer;
+      z-index: 1000;
+    }
+
+    .menu-icon div {
+      height: 4px;
+      background-color: #333;
+      border-radius: 2px;
+    }
+ .sidebar {
+      position: fixed;
+      top: 0;
+      right: -300px;
+      width: 300px;
+      height: 100%;
+      background-color:#121212;
+      box-shadow: -2px 0 10px rgba(0, 0, 0, 0.3);
+      display: flex;
+      flex-direction: column;
+      padding: 60px 20px;
+      transition: right 0.4s ease;
+      z-index: 1000;
+    }
+
+    .sidebar.open {
+      right: 0;
+    }
+
+    .sidebar a {
+      text-decoration: none;
+      color: #333;
+      padding: 15px 0;
+      border-bottom: 1px solid #eee;
+      font-size: 18px;
+      background-color: #121212;
+      color: white;
+    }
+
+    .sidebar a:hover {
+      background-color: #1a1a1a;
+    }
+   .why-choose-us {
+  padding: 40px 20px;
+  background-color: #121212;
+ 
+  text-align: center;
+}
+
+.why-choose-us h2 {
+  font-size: 2em;
+  margin-bottom: 30px;
+   color: red;
+}
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.feature h3 {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+
+.feature p {
+  font-size: 1em;
+  line-height: 1.5;
+}
+
+    .testimonials {
+  padding: 60px 20px;
+  background: black;
+  text-align: center;
+}
+
+.testimonials h2 {
+  font-size: 2rem;
+  margin-bottom: 40px;
+  color: red;
+}
+
+.testimonial-slider {
+  display: flex;
+  overflow-x: auto;
+  gap: 20px;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 10px;
+}
+
+.testimonial {
+  background:#2a2a2a;
+  flex: 0 0 300px;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  scroll-snap-align: start;
+  transition: background 0.3s, transform 0.2s;
+}
+.testimonial:hover{
+  color: white;
+  transform: scale(1.05);
+}
+.testimonial p {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 15px;
+}
+
+.testimonial h4 {
+  font-weight: bold;
+  color:red;
+}
+
   </style>
 </head>
 <body>
@@ -145,6 +280,18 @@
   </div>
 </section>
 
+ <div class="menu-icon" onclick="toggleSidebar()">
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+   <div class="sidebar" id="sidebar">
+    <a href="index.html">Home</a>
+    <a href="products.html">Products</a>
+    <a href="contact.html">Contact</a>
+    <a href="about.html">About</a>
+  </div>
+  
   </header>
   <section class="flavors">
     <a href="pages/vanilla.html" class="flavor" data-aos="fade-up" data-aos-delay="100">
@@ -170,6 +317,57 @@
     <button onclick="location.href='shop.html'">Shop Now</button>
     <button onclick="location.href='recipes.html'">View Recipes</button>
   </section>
+<section class="why-choose-us">
+  <h2>Why Choose Us?</h2>
+  <div class="features">
+    <div class="feature">
+      <h3>Made in the USA</h3>
+      <p>Our products are of high quality and are made of domestic and international ingredients in the USA.</p>
+    </div>
+    <div class="feature">
+      <h3>Fast shipping</h3>
+      <p>Fast service is something which we are known for! Once you pay, the product reaches you within no time.</p>
+    </div>
+    <div class="feature">
+      <h3>No undisclosed ingredients</h3>
+      <p>Our products are what they are actually! There is nothing undisclosed in our products which are harmful for consumption and we guarantee that!</p>
+    </div>
+    <div class="feature">
+      <h3>Replacement guarantee</h3>
+      <p>Our products come with a replacement option of 15 days. If you are not satisfied with our products, then we will replace it immediately for you!</p>
+    </div>
+  </div>
+</section>
+<section class="testimonials">
+  <h2>What People Say About Us</h2>
+  <div class="testimonial-slider">
+    <div class="testimonial">
+      <p>"I've been consuming whey protein for almost 5 years now... Could've listed a couple of brands here but then I don't want my review to be biased. I am literally looking for someone in my circle to give it away."</p>
+      <h4>Cliff George</h4>
+    </div>
+    <div class="testimonial">
+      <p>"This budget friendly supplement is a very good addition to the stack. The results are visible in just 1 month... A must try product."</p>
+      <h4>Jason Jane</h4>
+    </div>
+    <div class="testimonial">
+      <p>"One of the best Fat burners on the market... will help in healing and repairing your muscles."</p>
+      <h4>John Liv</h4>
+    </div>
+     <div class="testimonial">
+      <p>"This budget friendly supplement is a very good addition to the stack. The results are visible in just 1 month... A must try product."</p>
+      <h4>Jason Jane</h4>
+    </div>
+     <div class="testimonial">
+      <p>"This budget friendly supplement is a very good addition to the stack. The results are visible in just 1 month... A must try product."</p>
+      <h4>Jason Jane</h4>
+    </div>
+     <div class="testimonial">
+      <p>"This budget friendly supplement is a very good addition to the stack. The results are visible in just 1 month... A must try product."</p>
+      <h4>Jason Jane</h4>
+    </div>
+  </div>
+</section>
+
 
   <section class="Contact">
     <h1>Contact Info</h1>
@@ -187,7 +385,27 @@
     once: true
   });
 </script>
-
+<script> 
+function toggleSidebar() {
+      document.getElementById("sidebar").classList.toggle("open");
+       if (sidebar.classList.contains("open")) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+    }
+      
+  </script>
+<script>
+  const slider = document.querySelector('.testimonial-slider');
+setInterval(() => {
+  slider.scrollBy({ left: 320, behavior: 'smooth' });
+  // Wrap back to start
+  if (slider.scrollLeft + slider.clientWidth >= slider.scrollWidth) {
+    setTimeout(() => slider.scrollTo({ left: 0, behavior: 'smooth' }), 1000);
+  }
+}, 5000);
+</script>
 </body>
 </html>
   
